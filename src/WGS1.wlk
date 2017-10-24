@@ -11,13 +11,21 @@ class Posicionable {
 }
 
 class Guardia inherits Posicionable {
-	
-	constructor(_posicion) = super(_posicion) {
-
+	var listaX
+	var listaY
+	constructor(_posicion,x,y) = super(_posicion) {
+		listaX = x
+		listaY = y
 	}
 	method imagen() = "cherry.png"
 	method hittedWithsnake(wakman) {
 		snake.hittedWithguard(self)
+	}
+	method listaX(){
+		return listaX
+	}
+	method listaY(){
+		return listaY
 	}
 	
 }
@@ -83,16 +91,29 @@ class GuardMovement {
 	var timeCounter = 0
 	var move = 1
 	const posicion
+	var listaX
+	var listaY
+	var positionCounter = 0
 	
-	constructor(p) { posicion = p }
+	constructor(p,x,y) {
+		posicion = p
+		listaX = x
+		listaY = y
+	}
 	
 	method move(ghost) {
 		timeCounter++
 		if (timeCounter > 2) {			
-			posicion.moveRight(move)
+			posicion.x(listaX.get(positionCounter))
+			posicion.y(listaY.get(positionCounter))
 			move = -move
 			timeCounter = 0
+			positionCounter++
 		}
+		if(positionCounter == 6){
+				positionCounter = 0
+		}
+		
 	}
 	
 	method hittedWithsnake(wak) { }
