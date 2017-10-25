@@ -17,7 +17,7 @@ class Guardia inherits Posicionable {
 		listaX = x
 		listaY = y
 	}
-	method imagen() = "cherry.png"
+	method imagen() = "Guard.png"
 	method hittedWithsnake(wakman) {
 		snake.hittedWithguard(self)
 	}
@@ -110,7 +110,7 @@ class GuardMovement {
 			timeCounter = 0
 			positionCounter++
 		}
-		if(positionCounter == 6){
+		if(positionCounter == listaX.size()){
 				positionCounter = 0
 		}
 		
@@ -118,5 +118,5 @@ class GuardMovement {
 	
 	method hittedWithsnake(wak) { }
 	
-	method image() = "ground.png"
+	method image() = "metalwall.png"
 }

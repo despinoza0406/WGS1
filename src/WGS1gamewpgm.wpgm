@@ -3,25 +3,12 @@ import WGS1.*
 
 program SokobanGame {
 	game.title("WGS1 : Wollok Gear Solid 1")
+	game.title()
 	game.height(20)
 	game.width(20)
-	game.ground("suelo2.png")
+	game.ground("metalwall.png")
 
 	nivel1.cargar()
-	
-	const guardias = [
-		new Guardia(new Position(4, 1),[14,14,15,15,15,14],[12,13,13,12,11,11]),
-		new Guardia(new Position(3, 3),[4,5,5,4,3,3],[3,3,4,4,4,3]),
-		new Guardia(new Position(4, 4),[4,4,5,5,5,4],[5,6,6,5,4,4]),
-		new Guardia(new Position(8, 8),[9,8,9,8,9,8],[7,8,7,8,7,8])
-	]
-	
-	guardias.forEach{g =>
-		const movement = new GuardMovement(g.posicion(),g.listaX(),g.listaY())
-		g.posicion().drawElement(movement) 
-		game.whenCollideDo(movement, { guard => movement.move(guard) })
-		g.posicion().drawElement(g)
-	}
 	
 	game.addVisual(snake)
 	

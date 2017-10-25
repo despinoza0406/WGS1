@@ -1,6 +1,7 @@
 import WGS1.*
 import paredes.*
 import wollok.game.*
+import llegada.*
 
 object nivel1 {
 	
@@ -28,6 +29,22 @@ object nivel1 {
 		RIGHT.onPressDo{ snake.irDerecha() }
 
 		R.onPressDo{ self.restart() }
+		
+		var llegada = [new Position(18, 18)].map{ p => self.dibujar(new Llegada(p)) }
+		
+		const guardias = [
+		new Guardia(new Position(4, 1),[14,14,15,15,15,14],[12,13,13,12,11,11]),
+		new Guardia(new Position(3, 3),[4,5,5,4,3,3],[3,3,4,4,4,3]),
+		new Guardia(new Position(4, 4),[4,4,5,5,5,4],[5,6,6,5,4,4]),
+		new Guardia(new Position(8, 8),[9,8,9,8,9,8],[7,8,7,8,7,8])
+	]
+	
+	guardias.forEach{g =>
+		const movement = new GuardMovement(g.posicion(),g.listaX(),g.listaY())
+		g.posicion().drawElement(movement) 
+		game.whenCollideDo(movement, { guard => movement.move(guard) })
+		g.posicion().drawElement(g)
+	}
 		
 		}
 	method restart() {
