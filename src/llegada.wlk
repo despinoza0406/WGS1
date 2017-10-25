@@ -12,7 +12,7 @@ class Llegada {
 	    game.stop()
 	}
 	
-	method imagen() = "almacenaje.png"
+	method imagen() = "puerta2.png"
 	method posicion() = posicion
 	method posicion(pos) {posicion = pos}
 }

@@ -1,7 +1,7 @@
 import nivel.*
 import WGS1.*
 
-program SokobanGame {
+program WGS1 {
 	game.title("WGS1 : Wollok Gear Solid 1")
 	game.title()
 	game.height(20)

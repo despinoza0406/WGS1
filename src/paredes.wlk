@@ -9,7 +9,7 @@ class Pared {
 	
 	method puedePisarte(_) = false
 	
-	method imagen() = "muro.png"
+	method imagen() = "ladrillo2.png"
 	method getPosicion() = posicion
 	method setPosicion(pos) {posicion = pos}
 	method hittedWithsnake(wakman) {
