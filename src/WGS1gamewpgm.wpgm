@@ -4,8 +4,8 @@ import WGS1.*
 program WGS1 {
 	game.title("WGS1 : Wollok Gear Solid 1")
 	game.title()
-	game.height(20)
-	game.width(20)
+	game.height(19)
+	game.width(19)
 	game.ground("metalwall.png")
 
 	nivel1.cargar()

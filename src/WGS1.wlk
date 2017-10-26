@@ -1,6 +1,6 @@
 import paredes.*
 import direcciones.*
-import paredes.*
+
 
 class Posicionable {
 	var posicion
@@ -9,6 +9,7 @@ class Posicionable {
 	method posicion() = posicion
 	method posicion(_posicion) { posicion = _posicion }
 }
+
 
 class Guardia inherits Posicionable {
 	var listaX
@@ -30,7 +31,7 @@ class Guardia inherits Posicionable {
 	
 }
 
-object snake inherits Posicionable(new Position(11, 11)) {
+object snake inherits Posicionable(new Position(1, 1)) {
 	var direccion = arriba
 	
 	method imagen() {
@@ -48,8 +49,8 @@ object snake inherits Posicionable(new Position(11, 11)) {
 	}
 	method hittedWithguard(ghost) {
 		game.say(self, "You lose!")
-		self.posicion().x(12)
-		self.posicion().y(11)
+		self.posicion().x(1)
+		self.posicion().y(1)
 	}
 	
 	method retrocede() {
@@ -103,7 +104,7 @@ class GuardMovement {
 	
 	method move(ghost) {
 		timeCounter++
-		if (timeCounter > 2) {			
+		if (timeCounter > 1) {			
 			posicion.x(listaX.get(positionCounter))
 			posicion.y(listaY.get(positionCounter))
 			move = -move
