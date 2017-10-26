@@ -1,12 +1,6 @@
 import WGS1.*
 
-class Pared {
-	var posicion
-	
-	constructor(_posicion) {
-		posicion = _posicion
-	}
-	
+class Pared inherits Posicionable {
 	method puedePisarte(_) = false
 	
 	method imagen() = "ladrillo2.png"
