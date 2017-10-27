@@ -54,6 +54,7 @@ object nivel1 inherits Nivel {
 	override method cargar() {
 		super()
 		
+
 		posParedes.addAll([new Position(2,1), new Position(2,2), new Position(2,3),new Position(2,4),new Position(1,6),new Position(2,6)])
 		posParedes.addAll([new Position(3,4), new Position(4,4), new Position(4,5),new Position(5,5),new Position(5,6),new Position(6,6)])
 		posParedes.addAll([new Position(6,7), new Position(6,8), new Position(6,9),new Position(6,10),new Position(2,7),new Position(3,7)])
@@ -92,3 +93,4 @@ object nivel1 inherits Nivel {
 }	
 
 	
+
